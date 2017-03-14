@@ -1,13 +1,11 @@
 ---
-declared-services:
-  db-mongo:
-    label: mongodb
-    plan: 100
 applications:
 - name: mongo-express
   host: mongo-express
   memory: 128M
   services:
-    - db-mongo
+    - database
   env:
+    ME_CONFIG_BASICAUTH_USERNAME: admin
+    ME_CONFIG_BASICAUTH_PASSWORD: 
     NODE_ENV: cloud-foundry
